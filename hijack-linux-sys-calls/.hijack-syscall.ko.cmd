@@ -1,0 +1,1 @@
+cmd_/home/higor/Downloads/hijack-linux-sys-calls/hijack-syscall.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/higor/Downloads/hijack-linux-sys-calls/hijack-syscall.ko /home/higor/Downloads/hijack-linux-sys-calls/hijack-syscall.o /home/higor/Downloads/hijack-linux-sys-calls/hijack-syscall.mod.o
