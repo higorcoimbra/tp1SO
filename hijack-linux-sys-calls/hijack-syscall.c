@@ -14,7 +14,6 @@
 
 unsigned long *syscall_table;
 asmlinkage int (*original_remove)(int dirfd, const char *pathname, int flags);
-asmlinkage int (*new_getuid)();
 
 module_param(syscall_table, ulong, S_IRUGO);
 
@@ -35,8 +34,8 @@ int set_addr_ro(long unsigned int _addr)
 }
 
 asmlinkage int new_remove(int dirfd,const char *pathname, int flags) {
-
-    printk(KERN_ALERT "PID %i File:%s\n", current->pid, pathname);
+  
+    printk(KERN_ALERT "UserID %u File:%s\n", current_uid(), pathname);
     return (*original_remove)(dirfd, pathname, flags);
 }
 
@@ -46,8 +45,8 @@ static int init(void) {
 
     set_addr_rw((unsigned long)syscall_table);
 
-    original_remove = (void *)syscall_table[__NR_unlinkat];
-
+    original_remove = (void *)syscall_table[__NR_unlinkat]; 
+    
     syscall_table[__NR_unlinkat] = new_remove;  
 
     //GPF_ENABLE;
