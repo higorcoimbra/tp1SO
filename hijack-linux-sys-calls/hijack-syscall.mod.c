@@ -4,27 +4,25 @@
 
 MODULE_INFO(vermagic, VERMAGIC_STRING);
 
-__visible struct module __this_module
+struct module __this_module
 __attribute__((section(".gnu.linkonce.this_module"))) = {
-	.name = KBUILD_MODNAME,
-	.init = init_module,
+ .name = KBUILD_MODNAME,
+ .init = init_module,
 #ifdef CONFIG_MODULE_UNLOAD
-	.exit = cleanup_module,
+ .exit = cleanup_module,
 #endif
-	.arch = MODULE_ARCH_INIT,
+ .arch = MODULE_ARCH_INIT,
 };
 
 static const struct modversion_info ____versions[]
 __used
 __attribute__((section("__versions"))) = {
-	{ 0x151b2616, __VMLINUX_SYMBOL_STR(module_layout) },
-	{ 0xa864c0b8, __VMLINUX_SYMBOL_STR(param_ops_ulong) },
-	{ 0xdb7305a1, __VMLINUX_SYMBOL_STR(__stack_chk_fail) },
-	{ 0x8b9200fd, __VMLINUX_SYMBOL_STR(lookup_address) },
-	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
-	{ 0x9a8f1875, __VMLINUX_SYMBOL_STR(get_task_pid) },
-	{ 0xf733b1a6, __VMLINUX_SYMBOL_STR(current_task) },
-	{ 0xbdfb6dbb, __VMLINUX_SYMBOL_STR(__fentry__) },
+	{ 0xa15de617, "module_layout" },
+	{ 0x91766c09, "param_get_ulong" },
+	{ 0x799c50a, "param_set_ulong" },
+	{ 0xc58cdb60, "lookup_address" },
+	{ 0xb72397d5, "printk" },
+	{ 0x8f7fa084, "per_cpu__current_task" },
 };
 
 static const char __module_depends[]
@@ -32,5 +30,3 @@ __used
 __attribute__((section(".modinfo"))) =
 "depends=";
 
-
-MODULE_INFO(srcversion, "BE749360ABE89ADAADBCA90");

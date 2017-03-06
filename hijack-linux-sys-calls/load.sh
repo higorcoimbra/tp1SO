@@ -1,10 +1,8 @@
 #!/bin/bash
 
-SYS_MAP=`ls /boot/System.map-4.2.0-16-generic`
+SYS_MAP=`ls /boot/System.map-2.6.32.5`
 
-#SYS_CALL_ADDR=0x`cat $SYS_MAP | grep sys_call_table | cut -f1 -d' '`
-
-SYS_CALL_ADDR=0xffffffff818001c0
+SYS_CALL_ADDR=0x`cat $SYS_MAP | grep sys_call_table | cut -f1 -d' '`
 
 if [ 'X$SYS_CALL_ADDR' == 'X' ]
 then

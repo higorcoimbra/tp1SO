@@ -1,2 +1,2 @@
-/home/higor/Downloads/hijack-linux-sys-calls/hijack-syscall.ko
-/home/higor/Downloads/hijack-linux-sys-calls/hijack-syscall.o
+/home/os/tp1SO/hijack-linux-sys-calls/hijack-syscall.ko
+/home/os/tp1SO/hijack-linux-sys-calls/hijack-syscall.o

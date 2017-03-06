@@ -1,6 +1,6 @@
 obj-m	:= hijack-syscall.o
 
-KDIR    := /lib/modules/4.2.0-16-generic/build
+KDIR    := /lib/modules/2.6.32.5/build
 
 PWD    := `pwd`
 
